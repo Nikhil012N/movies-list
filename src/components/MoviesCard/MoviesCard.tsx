@@ -1,9 +1,9 @@
 import { Movie } from '@/types/Movie';
 import styles from './MoviesCard.module.css';
 import { useNavigate } from 'react-router-dom';
-import Button from '../Button/Button';
 import { FaHeart, FaInfoCircle, FaFilm } from 'react-icons/fa';
 import { MouseEvent, KeyboardEvent } from 'react';
+import Button from '../Button/Button';
 
 interface MovieCardProps {
   movie: Movie;

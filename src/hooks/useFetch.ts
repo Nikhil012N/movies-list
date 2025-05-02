@@ -1,28 +1,25 @@
 import { useState, useEffect, useCallback } from "react";
-
-type FetchFunction<T> = (...args: T[]) => Promise<T>;
-
-interface UseFetchResult<T> {
-  data: T | null;
+type FetchFunction<P, R> = (args: P) => Promise<R>;
+interface UseFetchResult<P, R> {
+  data: R | null;
   loading: boolean;
   error: Error | null;
-  execute: (...args: T[]) => Promise<void>;
+  execute: (args: P) => Promise<void>;
 }
-
-export const useFetch = <T>(
-  fetchFunction: FetchFunction<T>,
+export const useFetch = <P, R = P>(
+  fetchFunction: FetchFunction<P, R>,
   immediate = false
-): UseFetchResult<T> => {
-  const [data, setData] = useState<T | null>(null);
+): UseFetchResult<P, R> => {
+  const [data, setData] = useState<R | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
   const execute = useCallback(
-    async (...args: T[]) => {
+    async (args: P) => {
       try {
         setLoading(true);
         setError(null);
-        const result = await fetchFunction(...args);
+        const result = await fetchFunction(args);
         setData(result);
       } catch (err) {
         setError(
@@ -37,7 +34,7 @@ export const useFetch = <T>(
 
   useEffect(() => {
     if (immediate) {
-      execute();
+      execute({} as P); 
     }
   }, [execute, immediate]);
 

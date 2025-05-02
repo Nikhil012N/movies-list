@@ -44,7 +44,7 @@ const Home = () => {
       
       {!loading && error && <div className={styles.error}>{error.message}</div>}
       
-      {loading &&       <LoadingSpinner size="large" color="primary" />}
+      {loading &&  <LoadingSpinner />}
       
       {!loading &&data?.Search && (
         <MovieGrid

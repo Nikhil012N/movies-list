@@ -16,14 +16,5 @@ export default defineConfig({
       '@styles': '/src/styles'
     }
   },
-  esbuild: {
-    loader: 'tsx',
-    tsconfigRaw: {
-      compilerOptions: {
-        noEmit: true,  
-        skipLibCheck: true, 
-        strict: false, 
-      },
-    },
-  }
+
 })

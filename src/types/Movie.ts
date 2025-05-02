@@ -41,3 +41,15 @@ export interface MovieSearchResult {
   Response: 'True' | 'False';
   Error?: string;
 }
+export interface MovieSearchParams {
+  s: string;
+  page?: number;
+  type?: "movie" | "series" | "episode";
+  year?: string;
+  Search?: [];
+}
+export interface MovieByIdParams {
+  i: string;
+  plot?: "short" | "full";
+  [key: string]: string | undefined; 
+}

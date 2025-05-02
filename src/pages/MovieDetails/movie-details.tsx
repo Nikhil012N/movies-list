@@ -6,8 +6,8 @@ import styles from "./movie-details.module.css";
 import Button from '@/components/Button/Button';
 import Rating from '@/components/Rating/Rating';
 import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';
-import { Movie, MovieDetails} from '@/types/Movie';
-import { getMovieById, MovieByIdParams } from '@/api/MovieSearch.api';
+import { Movie, MovieByIdParams} from '@/types/Movie';
+import { getMovieById } from '@/api/MovieSearch.api';
 
 
 
@@ -21,7 +21,7 @@ const MoviesDetails = () => {
     loading, 
     error, 
     execute 
-  } = useFetch<MovieDetails>(getMovieById);
+  } = useFetch(getMovieById);
 
   useEffect(() => {
     if (id) {
@@ -43,7 +43,7 @@ const MoviesDetails = () => {
 
   if (loading) return (
     <div className={styles.loading}>
-      <LoadingSpinner size="large" color="primary" />
+      <LoadingSpinner />
       <p>Loading movie details...</p>
     </div>
   );
