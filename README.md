@@ -1,6 +1,3 @@
-Absolutely! Below is your complete `README.md` file content, formatted with Markdown syntax and emoji icons, ready to copy and use as a **single file**:
-
-```markdown
 # 🎬 Movie Browser App
 
 ## 📘 Objective
@@ -108,9 +105,4 @@ This project is open source and free to use.
 ---
 
 _Built with ⚛️ React, 🔗 React Router, 💠 React Icons, and 💾 Local Storage._
-```
 
-Copy the above content into a file named `README.md` in the root of your project.
-
----
-Answer from Perplexity: pplx.ai/share
