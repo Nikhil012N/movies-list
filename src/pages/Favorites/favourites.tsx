@@ -1,7 +1,7 @@
 
 
 import { Movie } from '@/types/Movie';
-import styles from './Favourites.module.css';
+import styles from './favourites.module.css';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import MovieGrid from '@/components/MoviesGrid/MoviesGrid';
 

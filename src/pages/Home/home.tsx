@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './Home.module.css';
+import styles from './home.module.css';
 import { Movie } from '@/types/Movie';
 import { useFetch } from '@/hooks/useFetch';
 import MovieGrid from '@/components/MoviesGrid/MoviesGrid';
