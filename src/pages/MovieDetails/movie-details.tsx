@@ -12,7 +12,7 @@ import { getMovieById, MovieByIdParams } from '@/api/MovieSearch.api';
 
 
 const MoviesDetails = () => {
-  const { id } = useParams<MovieByIdParams>();
+  const { id="" } = useParams<MovieByIdParams>();
   const navigate = useNavigate();
   const [favorites, setFavorites] = useLocalStorage<Movie[]>('favorites', []);
   
