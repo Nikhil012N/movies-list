@@ -1,54 +1,113 @@
-# React + TypeScript + Vite
+🎬 Movie Browser App
+📘 Objective
+🔍 Search for movies using the OMDb API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ℹ️ View details about a selected movie
 
-Currently, two official plugins are available:
+⭐ Save favorite movies locally (in your browser)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✅ Requirements
+Search Functionality
 
-## Expanding the ESLint configuration
+Use the OMDb API (free registration) to search movies by title.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Display results in a grid with:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+🖼️ Poster
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🎞️ Title
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+📅 Year
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+ℹ️ "More Info" button
+
+Movie Details Page
+
+Clicking “More Info” navigates to a detail page (React Router).
+
+Show:
+
+🎞️ Title
+
+🖼️ Poster
+
+🏷️ Genre
+
+🎬 Director
+
+📝 Plot
+
+⭐ Ratings
+
+Favorites Feature
+
+⭐ Save movies to favorites with a button
+
+💾 Use localStorage to persist favorites
+
+📂 Favorites Page to view/remove saved favorites
+
+⚙️ Technical Expectations
+⚛️ React 18+ with functional components and Hooks
+
+🔗 Use React Router for navigation
+
+🚫 No class components
+
+🎨 Use CSS Modules or Styled Components (no Bootstrap/Tailwind)
+
+📁 Clean project structure (components/, pages/, services/, etc.)
+
+💡 Bonus: Use TypeScript
+
+🛠️ Setup & Usage
+Clone the repository:
+
+bash
+git clone https://github.com/Nikhil012N/movies-list.git
+Install dependencies:
+
+bash
+npm install
+bash
+npm run dev 
+
+🚀 Features Overview
+🔍 Search for movies by title
+
+🖼️ Grid display of search results
+
+ℹ️ View detailed info on a separate page
+
+⭐ Favorite/unfavorite any movie
+
+📂 Favorites page to manage saved movies
+
+💾 Favorites persist using localStorage
+
+💡 Icons
+Use react-icons for consistent, scalable icons in your React app.
+
+Example usage:
+
+jsx
+import { FaHeart, FaRegHeart, FaInfoCircle } from 'react-icons/fa';
+
+<FaHeart />     // Filled heart for favorite
+<FaRegHeart />  // Outline heart for not favorite
+<FaInfoCircle /> // Info icon
+You can style icons via the style prop or with CSS Modules.
+
+📁 Project Structure
+components/ – Reusable UI components (e.g., MovieCard, FavoriteButton)
+
+pages/ – Page components (Home, MovieDetails, Favorites)
+
+services/ – API logic (e.g., omdbApi.js)
+
+styles/ – CSS Modules or styled-components files
+
+📝 License
+This project is open source and free to use.
+
+Built with ⚛️ React, 🔗 React Router, 💠 React Icons, and 💾 Local Storage.
