@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import '@styles//global.css';
+import './global.css';
 import Navbar from './components/Navbar/Header';
 import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary';
 import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';

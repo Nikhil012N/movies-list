@@ -1,9 +1,7 @@
 
-.favorites {
-  h1 {
+h1 {
     margin-bottom: var(--spacing-xl);
   }
-}
 
 .noFavorites {
   text-align: center;
