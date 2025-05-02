@@ -1,0 +1,31 @@
+.rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .source {
+    font-weight: 600;
+    min-width: 80px;
+    color: #666;
+    font-size: 0.85rem;
+  }
+  
+  .stars {
+    display: flex;
+  }
+  
+  .star {
+    color: #ddd;
+    font-size: 1rem;
+  }
+  
+  .filled {
+    color: var(--warning-color);
+  }
+  
+  .value {
+    font-size: 0.9rem;
+    color: #666;
+  }

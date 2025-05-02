@@ -1,0 +1,246 @@
+.movieCard {
+  background: var(--light-color);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.movieCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.movieCard:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.posterContainer {
+  position: relative;
+  padding-top: 150%;
+  background: linear-gradient(135deg, var(--dark-color), var(--darker-color));
+  overflow: hidden;
+}
+
+.poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.movieCard:hover .poster {
+  transform: scale(1.05);
+}
+
+.posterPlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-color);
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.placeholderIcon {
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.details {
+  padding: var(--spacing-md);
+  background: var(--light-color);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 600;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s ease;
+}
+
+.movieCard:hover .title {
+  color: var(--primary-color);
+}
+
+.year {
+  margin: var(--spacing-xs) 0 var(--spacing-md);
+  color: var(--text-color-light);
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: auto;
+}
+
+.buttonIcon {
+  margin-right: var(--spacing-xs);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.buttonText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.infoButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  color: var(--light-color);
+  transition: all 0.3s ease;
+  padding: 0.75rem;
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+}
+
+.infoButton:hover {
+  background: var(--primary-dark-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.infoButton:hover .buttonIcon {
+  transform: translateX(3px);
+}
+
+.favoriteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  background: var(--secondary-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem;
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.favoriteButton:hover {
+  background: var(--secondary-bg-hover-color);
+  transform: translateY(-1px);
+}
+
+.favoriteButton:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.favoriteButton.active {
+  background: rgba(248, 150, 30, 0.1);
+  color: var(--warning-color);
+  border-color: var(--warning-color);
+  animation: pulse 0.6s ease;
+}
+
+.favoriteButton.active:hover {
+  background: rgba(248, 150, 30, 0.2);
+}
+
+.heartIcon {
+  transition: transform 0.2s ease;
+}
+
+.favoriteButton:hover .heartIcon {
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Mobile-first responsive adjustments */
+@media (max-width: 768px) {
+  .movieCard {
+    max-width: 100%;
+  }
+
+  .details {
+    padding: var(--spacing-sm);
+  }
+
+  .actions {
+    gap: var(--spacing-xs);
+  }
+
+  .infoButton, 
+  .favoriteButton {
+    padding: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .posterContainer {
+    padding-top: 140%;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .year {
+    font-size: 0.85rem;
+    margin: var(--spacing-xxs) 0 var(--spacing-sm);
+  }
+
+  .infoButton,
+  .favoriteButton {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .buttonIcon {
+    margin-right: 0.25rem;
+    size: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .movieCard {
+    max-width: 300px;
+  }
+}

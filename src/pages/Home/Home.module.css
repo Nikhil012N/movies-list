@@ -1,0 +1,18 @@
+
+.home {
+  .loading,
+  .error,
+  .noResults {
+    text-align: center;
+    padding: var(--spacing-xl);
+    margin: var(--spacing-lg) 0;
+    background-color: white;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .error {
+    color: var(--danger-color);
+    background-color: rgba(var(--danger-color), 0.1);
+  }
+}

@@ -1,0 +1,69 @@
+.errorBoundary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: var(--spacing-xl);
+  text-align: center;
+  background-color: var(--light-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  margin: var(--spacing-xl) auto;
+  max-width: 600px;
+}
+
+.errorBoundary h2 {
+  color: var(--danger-color);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+}
+
+.errorBoundary p {
+  color: var(--text-color);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.errorBoundary button {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.errorBoundary button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .errorBoundary {
+    margin: var(--spacing-lg);
+    padding: var(--spacing-lg);
+  }
+
+  .errorBoundary h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .errorBoundary {
+    margin: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .errorBoundary h2 {
+    font-size: 1.2rem;
+  }
+
+  .errorBoundary p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,153 @@
+.navbar {
+  background-color: var(--light-color);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-md) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  z-index: 2;
+}
+
+.links {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: var(--spacing-xs) 0;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    color: var(--primary-color);
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.linkIcon {
+  font-size: 1.2rem;
+}
+
+.linkText {
+  display: inline-block;
+}
+
+.active {
+  color: var(--primary-color);
+
+  &::after {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .links {
+    gap: var(--spacing-lg);
+  }
+
+  .link {
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+  }
+
+  .linkText {
+    display: none;
+  }
+
+  .linkIcon {
+    font-size: 1.4rem;
+  }
+
+  .active {
+    background: var(--primary-color);
+    color: var(--light-color);
+    border-color: var(--primary-color);
+  }
+
+  .active::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .links {
+    gap: var(--spacing-md);
+  }
+
+  .link {
+    padding: var(--spacing-xs);
+  }
+
+  .linkIcon {
+    font-size: 1.3rem;
+  }
+}

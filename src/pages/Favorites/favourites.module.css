@@ -1,0 +1,15 @@
+
+.favorites {
+  h1 {
+    margin-bottom: var(--spacing-xl);
+  }
+}
+
+.noFavorites {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  color: #666;
+}

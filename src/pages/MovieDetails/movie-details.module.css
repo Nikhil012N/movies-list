@@ -1,0 +1,92 @@
+.movieDetails {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.backButton {
+  margin-bottom: var(--spacing-lg);
+}
+
+.movieHeader {
+  display: flex;
+  gap: var(--spacing-xl);
+  background-color: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.posterContainer {
+  flex: 0 0 300px;
+
+  @media (max-width: 768px) {
+    flex: 1;
+  }
+}
+
+.poster {
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.posterPlaceholder {
+  width: 100%;
+  height: 450px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: var(--border-radius-md);
+}
+
+.movieInfo {
+  flex: 1;
+}
+
+.genre {
+  color: #666;
+  font-style: italic;
+  margin-bottom: var(--spacing-md);
+}
+
+.director {
+  margin-bottom: var(--spacing-md);
+}
+
+.plot {
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.7;
+}
+
+.ratings {
+  margin: var(--spacing-xl) 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+}
+
+.favoriteButton {
+  margin-top: var(--spacing-md);
+}
+
+.loading,
+.error,
+.noMovie {
+  text-align: center;
+  padding: var(--spacing-xl);
+  margin: var(--spacing-lg) 0;
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.error {
+  color: var(--danger-color);
+  background-color: rgba(var(--danger-color), 0.1);
+}
