@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import styles from './home.module.css';
 import { Movie } from '@/types/Movie';
 import { useFetch } from '@/hooks/useFetch';
 import MovieGrid from '@/components/MoviesGrid/MoviesGrid';
@@ -7,7 +6,7 @@ import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { searchMovies } from '@/api/MovieSearch.api';
 import SearchBar from '@/components/SearchComponent/SearchComponent';
 import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';
-
+import styles from "./home.module.css"
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [favorites, setFavorites] = useLocalStorage<Movie[]>('favorites', []);
